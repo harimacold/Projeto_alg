@@ -14,4 +14,9 @@ struct recibo
 
 menu
 	imprime fila_pessoas, imprime lista_LP, imprime pilha_recibo
+	quit
+	inverte_pilha
+	castro pessoa
+	       lista LP
+	atende pessoa
 	
