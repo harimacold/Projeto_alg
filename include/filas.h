@@ -5,13 +5,14 @@
 #include <stdlib.h>
 #include <string.h>
 
-typedef struct _nodo{
+typedef struct _nodo_F{
   char *elem;
-  struct _nodo *prox;
-} nodo;
+  struct _nodo_F *prox;
+} nodo_F;
+
 
 typedef struct _fila{
-  nodo *frente, *fim;
+  nodo_F *frente, *fim;
 } fila;
 
 void inicFila(fila *);
