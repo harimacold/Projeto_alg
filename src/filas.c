@@ -16,8 +16,8 @@ void enfileirar(fila *F, pessoa novo)
 {
   F->fim->prox = (nodo_F *) malloc (sizeof(nodo_F));
   F->fim = F->fim->prox;
-  strcpy((F->fim->elem).nome, pessoa.nome);
-  copia
+  strcpy((F->fim->elem).nome, novo.nome);
+  copiaLista (&((F->fim->elem).lista_LP), novo.lista_LP);
   F->fim->prox = NULL;
 }
 
