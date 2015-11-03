@@ -12,7 +12,7 @@ float valor_total(lista *lis)
 {
   float total = 0;
   nodo_lis *aux;
-  if (Lista_vazia(lis))
+  if (Lista_vazia(*lis))
     printf ("Lista vazia");
   else
     for (aux = lis->prox; aux != lis; aux = aux->prox)
