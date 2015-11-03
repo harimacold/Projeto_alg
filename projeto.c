@@ -2,6 +2,15 @@
 #include "pilhas.h"
 #include "listas.h"
 
+/* TIPOS DEFINIDOS EM BIBLIOTECA
+- lista (LP elem, prox, ant)
+- fila (pessoa elem, prox)
+- pilha (float elem[255], int topo)
+- LP (nome, album, valor)
+- pessoa (nome, lista_LP)
+- recibo (cliente, total)
+ */
+
 void cadastra_lp(lista *lps){
 	LP lp;
 	inicLista(lps);
