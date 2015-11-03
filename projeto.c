@@ -29,9 +29,10 @@ float valor_total(lista *lis)
   return total;
 }
 
-void cadastrar(fila *F)
-{
-  F->fim->prox = (
+void cadastrar(fila *F){
+	tp_pessoa cliente;
+	
+}
 
 int main(void)
 {
