@@ -12,8 +12,7 @@ int main (void)
     {
       switch (i)
 	{
-	case 1:
-	  printf ("Entre com elemento: ");
+	case 1:	  printf ("Entre com elemento: ");
 	  scanf ("\n%[^\n]", str);
 	  enfileirar(&F, str);
 	  break;
