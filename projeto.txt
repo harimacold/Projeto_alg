@@ -1,0 +1,17 @@
+struct pessoa
+       nome
+       lista de LPs
+
+struct LP
+       nome
+       album
+       valor
+
+struct recibo
+       cliente (pessoa.nome)
+       valor (SOMA: pessoa.lista.valor)
+
+
+menu
+	imprime fila_pessoas, imprime lista_LP, imprime pilha_recibo
+	
