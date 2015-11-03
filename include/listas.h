@@ -5,8 +5,13 @@
 #include <stdlib.h>
 #include <string.h>
 
+typedef struct _LP{
+  char nome[50], album[50];
+  float valor;
+} LP;
+
 typedef struct _nodo_lis{
-  char *elem;
+  LP elem;
   struct _nodo_lis *prox, *ant;
 } nodo_lis;
 
@@ -14,11 +19,9 @@ typedef nodo_lis *lista;
 
 void inicLista (lista *);
 int Lista_vazia (lista );
-void insereLista (lista *, char *);
+void insereLista (lista *, LP );
 void removeLista (lista *, nodo_lis *);
 void imprimeLista (lista );
-void apagaLista (lista *);
-void insereLista_Ordenada (lista *, char *);
-void ordenaLista (lista *);
+void copiaLista (lista *, lista);
 
 #endif
