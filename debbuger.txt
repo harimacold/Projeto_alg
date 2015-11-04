@@ -1,0 +1,9 @@
+gcc -g -c nome -o nome.o ...
+gcc -o nome nome.o
+gdb nome 
+
+opcoes:
+	break 11 //para na linha 11
+	run //roda a funcao
+	display a //mostra o conteudo da variavel a
+	display 1/a //exemplo teste para encontrar erro
