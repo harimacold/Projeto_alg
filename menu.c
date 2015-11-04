@@ -1,3 +1,4 @@
+#include "listas.h"
 #include "filas.h"
 #include "pilhas.h"
 
@@ -12,38 +13,66 @@
 
 void cadastra_cliente(fila *F)
 {
-  pessoa novo;
-  LP aux;
-  int tam, i;
-  printf ("Nome: ");
-  scanf ("\n%[^\n]", novo.nome);
-  printf ("Tamanho da lista: ");
-  scanf ("%d", &tam);
-  for (i = 0; i < tam; i++)
+    pessoa novo;
+    LP aux;
+    int tam, i;
+    printf ("Nome: ");
+    scanf ("\n%[^\n]", novo.nome);
+    inicLista(&(novo.lista_LP));
+    printf ("Tamanho da lista: ");
+    scanf ("%d", &tam);
+    for (i = 0; i < tam; i++)
     {
-      printf ("LP %d\n", i + 1);
-      printf ("Artista: ");
-      scanf ("\n%[^\n]", aux.nome);
-      printf ("Album: ");
-      scanf ("\n%[^\n]", aux.album);
-      printf ("Valor: ");
-      scanf ("%f", &aux.valor);
-      insereLista (&(novo.lista_LP), aux);
+        printf ("LP %d\n", i + 1);
+        printf ("Artista: ");
+        scanf ("\n%[^\n]", aux.nome);
+        printf ("Album: ");
+        scanf ("\n%[^\n]", aux.album);
+        printf ("Valor: ");
+        scanf ("%f", &aux.valor);
+        insereLista (&(novo.lista_LP), aux);
     }
-  enfileirar(F, novo);
+    enfileirar(F, novo);
 }
-void atende_cliente(fila *, pilha *);
-pessoa* selecClient(fila *);
+
+void atende_cliente(fila *F, pilha *pil)
+{
+    pessoa fst;
+    recibo novo;
+    float acum = 0;
+    nodo_lis *aux;
+    char ch;
+    printf("Imprimir Lista? (S/N): ");
+    scanf ("%c", &ch);
+    if (ch == 'S')
+        imprimeLista(F->frente->elem.lista_LP);
+    strcpy(fst.nome, (F->frente->elem).nome);
+    copiaLista(&(fst.lista_LP), (F->frente->elem).lista_LP);
+    desenfileirar(F);
+    for (aux = (fst.lista_LP)->prox; aux != NULL; aux = aux->prox)
+        acum = acum + aux->elem.valor;
+    strcpy(novo.cliente, fst.nome);
+    novo.total = acum;
+    push(pil, novo);
+}
+
+/*
+pessoa* selecClient(fila *)
+{
+    printf("Nome: ");
+
+}
+*/
 
 int main (void)
 {
-  int men;
-  fila clientes;
-  pilha recibos;
-  inicFila(&clientes);
-  inicPilha(&recibos);
-  printf ("1 - Novo cliente\n2 - Atender cliente\n3 - Imprimir estado de Fila\n4 - imprimir estado de Pilha\n5 - Imprimir lista de um cliente\n0 - Sair\n\nEntrada: ");
-  /*
+    int men;
+    fila clientes;
+    pilha recibos;
+    inicFila(&clientes);
+    inicPilha(&recibos);
+    printf ("1 - Novo cliente\n2 - Atender cliente\n3 - Imprimir estado de Fila\n4 - imprimir estado de Pilha\n0 - Sair\n\nEntrada: ");
+/*
 1 - Novo cliente
 2 - Atender cliente
 3 - Imprimir estado de Fila
@@ -51,30 +80,28 @@ int main (void)
 5 - Imprimir lista de um cliente
 0 - Sair
 
-  */
+*/
 
-  scanf ("%d", &men);
-  while (men != 0)
+    scanf ("%d", &men);
+    while (men != 0)
     {
-      switch (men)
-	{
-	case 1:
-	  cadastra_cliente(&clientes);
-	  break;
-	case 2:
-	  atende_cliente(&clientes, &recibos);
-	  break;
-	case 3:
-	  imprimeFila(clientes);
-	  break;
-	case 4:
-	  imprimePilha(&recibos);
-	  break;
-	case 5:
-	  imprimeLista(selecClient(&clientes)->lista_LP);
-	  break;
-	}
-      printf ("Entrada: ");
-      scanf ("%d", &men);
+        switch (men)
+        {
+        case 1:
+            cadastra_cliente(&clientes);
+            break;
+        case 2:
+            atende_cliente(&clientes, &recibos);
+            break;
+        case 3:
+            imprimeFila(clientes);
+            break;
+        case 4:
+            imprimePilha(&recibos);
+            break;
+        }
+        printf ("Entrada: ");
+        scanf ("%d", &men);
     }
+    printf ("Program encerrado!\n");
 }
