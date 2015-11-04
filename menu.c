@@ -37,16 +37,17 @@ void cadastra_cliente(fila *F)
 
 void atende_cliente(fila *F, pilha *pil)
 {
+    nodo_F *frnt = F->frente->prox;
     pessoa fst;
     recibo novo;
     float acum = 0;
     nodo_lis *aux;
     char ch;
-    printf("%s\n", (F->frente->elem).nome)
+    printf("Nome do primeiro: %s\n", (frnt->elem).nome);
     printf("Imprimir Lista? (S/N): ");
     scanf ("\n%c", &ch);
-    strcpy(fst.nome, (F->frente->elem).nome);
-    copiaLista(&(fst.lista_LP), (F->frente->elem).lista_LP);
+    strcpy(fst.nome, (frnt->elem).nome);
+    copiaLista(&(fst.lista_LP), (frnt->elem).lista_LP);
     desenfileirar(F);
     for (aux = (fst.lista_LP)->prox; aux != NULL; aux = aux->prox)
         acum = acum + aux->elem.valor;
