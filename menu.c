@@ -43,17 +43,17 @@ void atende_cliente(fila *F, pilha *pil)
     nodo_lis *aux;
     char ch;
     printf("Imprimir Lista? (S/N): ");
-    scanf ("%c", &ch);
-    if (ch == 'S')
-        imprimeLista(F->frente->elem.lista_LP);
+    scanf ("\n%c", &ch);
     strcpy(fst.nome, (F->frente->elem).nome);
-    copiaLista(&(fst.lista_LP), (F->frente->elem).lista_LP);
+    //copiaLista(&(fst.lista_LP), (F->frente->elem).lista_LP);
     desenfileirar(F);
     for (aux = (fst.lista_LP)->prox; aux != NULL; aux = aux->prox)
         acum = acum + aux->elem.valor;
     strcpy(novo.cliente, fst.nome);
     novo.total = acum;
     push(pil, novo);
+    if (ch == 'S')
+        imprimeLista(fst.lista_LP);
 }
 
 /*
@@ -100,7 +100,7 @@ int main (void)
             imprimePilha(&recibos);
             break;
         }
-        printf ("Entrada: ");
+        printf ("\n\nEntrada: ");
         scanf ("%d", &men);
     }
     printf ("Program encerrado!\n");

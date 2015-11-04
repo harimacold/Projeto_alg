@@ -50,5 +50,5 @@ void copiaLista (lista *liscp, lista lis)
   nodo_lis *aux;
   inicLista(liscp);
   for (aux = lis->prox; aux != lis; aux = aux->prox)
-    insereLista(liscp, lis->elem);
+    insereLista(liscp, aux->elem);
 }
