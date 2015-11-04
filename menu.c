@@ -49,7 +49,7 @@ void atende_cliente(fila *F, pilha *pil)
     strcpy(fst.nome, (frnt->elem).nome);
     copiaLista(&(fst.lista_LP), (frnt->elem).lista_LP);
     desenfileirar(F);
-    for (aux = (fst.lista_LP)->prox; aux != NULL; aux = aux->prox)
+    for (aux = (fst.lista_LP)->prox; aux != fst.lista_LP; aux = aux->prox)
         acum = acum + aux->elem.valor;
     strcpy(novo.cliente, fst.nome);
     novo.total = acum;
