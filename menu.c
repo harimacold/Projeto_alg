@@ -42,7 +42,7 @@ void atende_cliente(fila *F, pilha *pil)
     float acum = 0;
     nodo_lis *aux;
     char ch;
-    printf("%s\n", (F->frente->elem).nome)
+    printf("%s\n", (F->frente->elem).nome);
     printf("Imprimir Lista? (S/N): ");
     scanf ("\n%c", &ch);
     strcpy(fst.nome, (F->frente->elem).nome);
