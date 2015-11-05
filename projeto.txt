@@ -1,26 +1,3 @@
-struct pessoa
-       nome
-       lista de LPs
-
-struct LP
-       nome
-       album
-       valor
-
-struct recibo
-       cliente (pessoa.nome)
-       valor (SOMA: pessoa.lista.valor)
-
-
-menu
-	imprime fila_pessoas, imprime lista_LP, imprime pilha_recibo
-	quit
-	inverte_pilha
-	castro pessoa
-	       lista LP
-	atende pessoa
-	
-
 
 float valor_total(lista *lis)
 {
@@ -38,3 +15,27 @@ float valor_total(lista *lis)
 COMPILAÇÃO
 
 gcc projeto.c -I./include -L./lib -llistas -lfilas -lpilhas -o projeto.exe
+
+Decisões
+
+Uma decisão importante sobre o invertePilha seria sobre dois pontos importantes.
+O primeiro desses pontos foi sobre inverter a pilha e colocar em outra pilha o resultado, ao invés de colocar na própria pilha.
+A primeira função invertePilha fazia exatamente isso:
+
+void invertePilha(pilha *pil)
+{
+    pilha aux;
+    int i;
+    inicPilha(&aux);
+    for(i=0; i <= pil->topo; i++)
+        push(&aux, pil->vet[i]);
+    for(i=aux.topo; i >= 0; i--)
+    {
+        strcpy(pil->vet[pil->topo - i].cliente, aux.vet[i].cliente);
+        pil->vet[pil->topo - i].total = aux.vet[i].total;
+    }
+}
+
+contudo, preferimos a versão recente, pois o uso que fizemos dela era mais interessante quando passado para outra pilha.
+
+O outro ponto importante foi segundo a esvaziar ou não a pilha original. Neste caso pareceu simplesmente mais interessante já esvazia a pilha original.
