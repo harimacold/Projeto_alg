@@ -23,6 +23,6 @@ void push(pilha *, recibo );
 void pop(pilha *);
 void imprimePilha(pilha *);
 int tamanhoPilha(pilha *);
-void invertePilha(pilha *);
+void invertePilha(pilha *, pilha *);
 
 #endif
