@@ -58,14 +58,6 @@ void atende_cliente(fila *F, pilha *pil)
         imprimeLista(fst.lista_LP);
 }
 
-/*
-pessoa* selecClient(fila *)
-{
-    printf("Nome: ");
-
-}
-*/
-
 int main (void)
 {
     int men;
@@ -81,7 +73,6 @@ int main (void)
 4 - Imprimir estado de Pilha
 5 - Imprimir lista de um cliente
 0 - Sair
-
 */
 
     scanf ("%d", &men);

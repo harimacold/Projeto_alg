@@ -39,13 +39,13 @@
 		<Unit filename="../include/filas.h" />
 		<Unit filename="../include/listas.h" />
 		<Unit filename="../include/pilhas.h" />
-		<Unit filename="../menu.c">
-			<Option compilerVar="CC" />
-		</Unit>
 		<Unit filename="../src/filas.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="../src/listas.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../src/menu.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="../src/pilhas.c">
