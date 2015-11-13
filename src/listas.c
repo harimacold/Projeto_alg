@@ -45,7 +45,7 @@ void imprimeLista(lista lis)
         printf ("Lista vazia");
     else
         for (aux = lis->prox; aux != lis; aux = aux->prox)
-            printf ("Nome: %s\nAlbum: %s\nValor: %f\n\n", (aux->elem).nome, (aux->elem).album, (aux->elem).valor);
+            printf ("Nome: %s\nAlbum: %s\nValor: %.2f\n\n", (aux->elem).nome, (aux->elem).album, (aux->elem).valor);
 }
 
 void copiaLista (lista *liscp, lista lis)

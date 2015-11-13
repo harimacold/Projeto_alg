@@ -46,7 +46,7 @@ void imprimePilha(pilha *pil)
     else
     {
         for (i = 0; i <= pil->topo; i++)
-            printf ("Cliente: %s\nValor: %f\n\n", (pil->vet)[i].cliente, (pil->vet)[i].total);
+            printf ("Cliente: %s\nValor: %.2f\n\n", (pil->vet)[i].cliente, (pil->vet)[i].total);
         printf ("Tamanho da Pilha: %d\n\n", i);
     }
 }
@@ -66,5 +66,7 @@ void invertePilha(pilha *pilinv, pilha *pil)
         push(pilinv, pil->vet[i]);
         pop(pil);
     }
+    printf("Pilha Invertida:\n");
+    imprimePilha(pilinv);
 }
 // invertePilha inverte pil e guarda o resultado em pilinv, além de apagar pil.
