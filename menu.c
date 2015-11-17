@@ -1,5 +1,5 @@
 #include "listas.h"
-#include "filas.h"
+#include "filas.h" 
 #include "pilhas.h"
 
 /* TIPOS DEFINIDOS EM BIBLIOTECA
@@ -11,7 +11,7 @@
 - recibo (cliente, total)
  */
 
-void cadastra_cliente(fila *F)
+void cadastra_cliente(fila *F, FILE *log)
 {
     pessoa novo; // novo cliente da Fila
     LP aux;
@@ -19,7 +19,9 @@ void cadastra_cliente(fila *F)
 
     printf ("Nome: ");
     scanf ("\n%[^\n]", novo.nome); // recebe nome do cliente
+
     inicLista(&(novo.lista_LP));
+	fprintf(log,"Cadastrado novo cliente com o nome: %s\n",novo.nome); 
     printf ("Tamanho da lista: "); // recebe o tamanho da lista do cliente
     scanf ("%d", &tam);
     while (tam < 0)
@@ -36,6 +38,7 @@ void cadastra_cliente(fila *F)
         scanf ("\n%[^\n]", aux.album);
         printf ("Valor: ");
         scanf ("%f", &aux.valor);
+	fprintf(log,"		-cadastrado vinil %d com nome: %s, album %s, e valor de R$ %.2f\n", i+1, aux.nome, aux.album, aux.valor);
         insereLista (&(novo.lista_LP), aux); // ao fim do FOR, a lista do cliente estará cadastrada
     }
     enfileirar(F, novo);
@@ -72,11 +75,11 @@ int main (void)
     pilha recibos;
     pilha *gaveta; //Esta variável é um adicional não pedido pelo trabalho
 
-     log = fopen("log.txt",w);
+     log = fopen("log.txt","w");
 	fputs("-------------Começando o programa-------------\n",log);
-	fputs(" Inicia Fila de cliente\n",log);
+	fputs("Inicia Fila de cliente\n",log);
     inicFila(&clientes);
-	fputs("inicia Pilha de recibos\n",log);
+	fputs("Inicia Pilha de recibos\n\n\n",log);
     inicPilha(&recibos);
     gaveta = (pilha *) malloc (sizeof(pilha)); // gaveta será um vetor dinâmico de pilhas
     cont = 0;   // cont conta o número de espaços ocupados em gaveta
@@ -99,26 +102,26 @@ int main (void)
         switch (men)
         {
         case 1:
-            cadastra_cliente(&clientes);
-            fprintf (log, "Cliente %s entrou na fila.\n", clientes.fim->elem.nome)
+            cadastra_cliente(&clientes, log);
+            fprintf (log, "Cliente %s entrou na fila.\n\n", clientes.fim->elem.nome);
             break;
         case 2:
             atende_cliente(&clientes, &recibos);
-            fprintf (log, "Cliente %s foi atendido, e foi colocado na pilha um recibo de valor %.2f.\n", recibos.vet[recibos.topo].cliente, recibos.vet[recibos.topo].total);
+            fprintf (log, "Cliente %s foi atendido, e foi colocado na pilha um recibo de valor %.2f.\n\n", recibos.vet[recibos.topo].cliente, recibos.vet[recibos.topo].total);
             break;
         case 3:
             imprimeFila(clientes);
-            fprintf (log, "Fila de clientes foi impressa.\n");
+            fprintf (log, "Fila de clientes foi impressa.\n\n");
             break;
         case 4:
             imprimePilha(&recibos);
-             fprintf (log, "O estado atual da pilha foi impresso, indicando tamanho da pilha em %d.\n", recibos.topo);
+             fprintf (log, "O estado atual da pilha foi impresso, indicando tamanho da pilha em %d.\n\n", recibos.topo);
             break;
         case 5:
             invertePilha(&(gaveta[cont]), &recibos); //engavetar vai inverter a pilha de recibos e guardar no último espaço alocado para a gaveta
             cont++;
             gaveta = (pilha *) realloc (gaveta, cont*sizeof(pilha)); // aqui abrimos espaço para a próxima pilha invertida
-             fprintf (log, "A pilha de recibos foi invertida, impressa e engavetada.\n");
+             fprintf (log, "A pilha de recibos foi invertida, impressa e engavetada.\n\n");
             break;
         case 6:
             printf("Ha %d pilha(s) dentro da gaveta!\n", cont);

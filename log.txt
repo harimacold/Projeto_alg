@@ -1,0 +1,59 @@
+-------------Começando o programa-------------
+Inicia Fila de cliente
+Inicia Pilha de recibos
+
+
+Cadastrado novo cliente com o nome: Joao Pessoa
+		-cadastrado vinil 1 com nome: Iron Maiden, album Best of The Beast, e valor de R$ 35.00
+		-cadastrado vinil 2 com nome: Pink Floyd, album Atom Heart Mother, e valor de R$ 175.00
+		-cadastrado vinil 3 com nome: Elvis Presley, album Thats The Way It Is, e valor de R$ 90.75
+		-cadastrado vinil 4 com nome: Legiao Urbana, album Que Pais e Esse, e valor de R$ 42.60
+		-cadastrado vinil 5 com nome: Queen, album Greatest Hits 2, e valor de R$ 150.00
+Cliente Joao Pessoa entrou na fila.
+
+Cadastrado novo cliente com o nome: Paulo Gustavo
+		-cadastrado vinil 1 com nome: Scorpion, album Virgin Killer, e valor de R$ 40.00
+		-cadastrado vinil 2 com nome: Janis Joplin, album Clapton Zeppelin, e valor de R$ 77.89
+		-cadastrado vinil 3 com nome: Pink Floyd, album Ummagumma, e valor de R$ 100.00
+Cliente Paulo Gustavo entrou na fila.
+
+Cadastrado novo cliente com o nome: Maria Eduarda
+		-cadastrado vinil 1 com nome: Pink Floyd, album The Wall, e valor de R$ 250.00
+		-cadastrado vinil 2 com nome: Guns N Roses, album Lies, e valor de R$ 79.90
+		-cadastrado vinil 3 com nome: AC DC, album For Those About to Rock, e valor de R$ 89.00
+		-cadastrado vinil 4 com nome: Van Halen, album Diver Down, e valor de R$ 35.65
+Cliente Maria Eduarda entrou na fila.
+
+Fila de clientes foi impressa.
+
+Cliente Joao Pessoa foi atendido, e foi colocado na pilha um recibo de valor 493.35.
+
+Cliente Paulo Gustavo foi atendido, e foi colocado na pilha um recibo de valor 217.89.
+
+Cadastrado novo cliente com o nome: Hugor Karl
+		-cadastrado vinil 1 com nome: Guns N Roses, album Appetite For Destruction, e valor de R$ 35.00
+		-cadastrado vinil 2 com nome: Pato Fu, album Rotomusic de Liquidificapum, e valor de R$ 70.00
+		-cadastrado vinil 3 com nome: Capital Inicial, album Pedra na Mao, e valor de R$ 38.00
+Cliente Hugor Karl entrou na fila.
+
+Cadastrado novo cliente com o nome: Lawrence Peterson
+		-cadastrado vinil 1 com nome: Pink Floyd, album Delicate Sound of Thunder, e valor de R$ 75.00
+		-cadastrado vinil 2 com nome: John Lennon, album Double Fantasy, e valor de R$ 29.95
+Cliente Lawrence Peterson entrou na fila.
+
+Fila de clientes foi impressa.
+
+Cliente Maria Eduarda foi atendido, e foi colocado na pilha um recibo de valor 454.55.
+
+O estado atual da pilha foi impresso, indicando tamanho da pilha em 2.
+
+Cliente Hugor Karl foi atendido, e foi colocado na pilha um recibo de valor 143.00.
+
+A pilha de recibos foi invertida, impressa e engavetada.
+
+A pilha de numero 1 de dentro da gaveta foi mostrada.
+Fila de clientes foi impressa.
+
+Cliente Lawrence Peterson foi atendido, e foi colocado na pilha um recibo de valor 104.95.
+
+Programa encerrado!
