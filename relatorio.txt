@@ -1,0 +1,54 @@
+Para começar tivemos que pensar em tudo que precisávamos.
+
+Uma FILA de pessoas:
+- Temos uma boa definição do que é FILA
+- Devemos definir o que é uma pessoa!
+
+Então: Pessoa é uma estrutura contendo seu nome, e uma LISTA de LPs
+- Temos uma boa definição do que é LISTA, e para esse caso prefrimos usar uma opção Lista Circular Duplamente Encadeada
+- Devemos definir o que é um LP!
+
+Para o LP tínhamos alguns requisitos pré-estabelecidos. São eles:
+- Nome do artista/banda
+- Nome do Álbum
+- Preço do LP
+
+Tendo isso definido partimos para o último elemento principal: A PILHA de recibos
+- Sabemos o que é uma PILHA
+- Precisamos definir o que é um recibo
+
+Recibo foi pré-estabelicido como contendo:
+- Nome do cliente atendido
+- Valor total pago
+
+Até esse ponto não havíamos feito código algum.
+Foi nesse ponto que decidimos implementar a Lista e a Fila com implementação dinâmica e a Pilha com implementação estática
+Então começamos a implementar uma biblioteca genérica para listas, filas e pilhas, utilizando como elemento básico a princípio strings.
+Depois de testada e verificada cada função das 3 bibliotecas, utilizando strings, precisávamos incluir os tipos LP, Pessoa e Recibo
+Como a Fila teria como elemento "Pessoas" e cada elemento Pessoa possui um campo Lista de LPs, precisávamos implementar a biblioteca listas.h primeiro
+
+Foi assim que listas.h foi implementada, definimos o tipo LP dentro de listas.h e em listas.c modificamos as funções para tratar LPs ao invés de strings
+
+Em seguida implementamos filas.h, que teria como biblioteca listas.h (que por sua vez já continha as bibliotecas padrões necessárias)
+Definimos em filas.h o tipo pessoa, e em filas.c modificamos todas as funções para receber um tipo pessoa ao invés de strings
+Por fim, definimos o tipo recibo em pilhas.h, e modificamos as funções de pilhas.c para recber recibos em vez de strings
+
+Aplicamos vários testes para verificar o funcionamento de cada função em cada caso,
+enquanto aplicávamos os testes podíamos perceber o que era interessante colocar no menu
+
+Nosso primeiro menu tinha apenas "Novo cliente, Atender cliente, Imprime fila e Imprime pilha"
+No começo tivemos a ideia de inverter a pilha cada vez que ela ficasse cheia e então "guardar" essa informação
+Para que o "guardar" não ficasse subjetivo, criamos a ideia de "Gaveta", basicamente um lugar que guarda pilhas
+Essa gaveta é um vetor de pilhas, dinâmicamente alocado, por isso abrimos espaço para uma nova pilha de recibos a cada vez que vamos guardar uma nova
+Com a ideia de gaveta surgiram as outras opções do menu que se referem a isso
+
+
+Há outros elementos que foram surgindo durante as implementações:
+- A ideia de imprimir a lista de LPs do cliente atendido, se requisitado pelo usuário
+- A criação da função copiaLista para facilitar o "enfileiramento" de novos clientes
+- A ideia de usar duas pilhas para o invertePilha, de modo que a pilha original vai se esvaziando enquanto a invertida é preenchida
+
+
+O log foi a última parte a ser feita, pensado como um FILE por ser mais simples e mais completo
+O log foi feito quando o código já estava todo feito
+
