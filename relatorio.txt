@@ -52,3 +52,11 @@ Há outros elementos que foram surgindo durante as implementações:
 O log foi a última parte a ser feita, pensado como um FILE por ser mais simples e mais completo
 O log foi feito quando o código já estava todo feito
 
+######################
+Observações sobre compilações:
+Para compilar, baixe todos os arquivos da pasta Bibliotecas e coloque-os em uma pasta chamada Bibliotecas.
+Baixe os arquivos vinileria.c.txt e Makefile.txt e coloque-os imediatamente ao lado desta pasta, não dentro, ao lado.
+Altere o nome de Makefile.txt para simplesmente Makefile
+Dẽ, no terminal, o comando make
+
+Para a execução há um teste.txt, que pode ser útil.
